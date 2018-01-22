@@ -1,4 +1,4 @@
-Python scripts used to perform various tasks with the ArchivesSpace API
+Python scripts used to perform various tasks with the ArchivesSpace API. All scripts and documentation created by Valerie Addonizio, [Eric Hanson](https://github.com/ehanson8), and [Lora Woodford](https://github.com/lorawoodford)
 
 
 ## Authenticating to the API
@@ -107,7 +107,8 @@ While our situation is unique (and, notably, not IDEAL!), the idea of yanking DS
 
 
 
-# MARAC_API_Workshop
+## MARAC_API_Workshop
+
 These are the resources used in the "There's An API for that!" workshops sponsored by the Mid-Atlantic Regional Archives Conference in 2017. Note that these are the scripts used in the workshop itself. For additional scripts and resources referenced in the workshop, navigate to the [_additional resources_](../master//additional%20resources) subfolder, above.
 
 These scripts and this documentation, combined with the workshop itself, are meant to encourage and empower users to run Python scripts at their home institutions. The following details are meant to be understood in order.
@@ -215,3 +216,28 @@ You can run this script by typing `python viafReconciliationPeople.py` in cygwin
 This script looks for the CSV called _viafCorporateResults.csv_ created by running [viafReconciliationCorporate.py](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/viafReconciliationCorporate.py), converts those reults to JSON on the fly, and then posts the resulting corporate agent records to ArchivesSpace as new records (note: this script does not edit _pre-existing_ agent records, though that is possible with a script that first GETs the agents you have, runs them through the VIAF reconciliation, and then posts them back [saying all that isn't helpful if you don't have a script that does so, but that's how you start to game out what you need]).
 
 You can run this script by typing `python postVIAFOrganizations.py` in cygwin/the Mac terminal. Remember that you need to be running cygwin/the Mac terminal from the directory where the script and your _viafCorporateResults.csv_ is saved.
+
+
+
+## python-scripts
+
+#### [asCSV-aos.py](https://github.com/jhu-archives-and-manuscripts/python_scripts/blob/master/asCSV-aos.py)
+Generate a CSV of all AOs from a particular resource using agentarchives.
+
+#### [asCSV-titles.py](https://github.com/jhu-archives-and-manuscripts/python_scripts/blob/master/asCSV-titles.py)
+Generate a CSV of the titles of all AOs from a particular resource using agentarchives.
+
+#### [asLinkProfiles.py](https://github.com/jhu-archives-and-manuscripts/python_scripts/blob/master/asLinkProfiles.py)
+Link a single container profile to all top_containers in a particular resource.
+
+#### [get.py](https://github.com/jhu-archives-and-manuscripts/python_scripts/blob/master/get.py)
+Simple script to get from an endpoint (currently accessions).
+
+#### [post.py](https://github.com/jhu-archives-and-manuscripts/python_scripts/blob/master/post.py)
+Post contents of a jsonfile.
+
+#### [postNew.py](https://github.com/jhu-archives-and-manuscripts/python_scripts/blob/master/postNew.py)
+Post contents of a jsonfile.
+
+#### [suppressSelectEnumerations.py](https://github.com/jhu-archives-and-manuscripts/python_scripts/blob/master/suppressSelectEnumerations.py)
+Suppress enumeration values as identified in an external json file.
