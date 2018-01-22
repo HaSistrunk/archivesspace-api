@@ -1,5 +1,6 @@
 Python scripts used to perform various tasks with the ArchivesSpace API. All scripts and documentation created by Valerie Addonizio, [Eric Hanson](https://github.com/ehanson8), and [Lora Woodford](https://github.com/lorawoodford)
 
+# archivesspace-api
 
 ## Authenticating to the API
 
@@ -8,8 +9,6 @@ All of these scripts require a secrets.py file in the same directory that must c
 	baseURL='[ArchivesSpace API URL]'
 	user='[user name]'
 	password='[password]'
-
-## archivesspace-api
 
 #### [addBibNumbersAndPost.py](https://github.com/jhu-archives-and-manuscripts/archivesspace-api/blob/master/addBibNumbersAndPost.py)
 Based on a specified CSV file with URIs and bib numbers, this script posts the specified bib number to the ['user_defined]['real_1'] field for record specified by the URI.
@@ -86,7 +85,7 @@ This script unpublishes all archival objects associated with the specified resou
 
 
 
-## spacewalk
+# spacewalk
 
 #### [spacewalk.py](https://github.com/jhu-archives-and-manuscripts/spacewalk/blob/master/spacewalk.py)
 DSpace to ASpace crosswalking for JHU
@@ -107,14 +106,14 @@ While our situation is unique (and, notably, not IDEAL!), the idea of yanking DS
 
 
 
-## MARAC_API_Workshop
+# MARAC_API_Workshop
 
 These are the resources used in the "There's An API for that!" workshops sponsored by the Mid-Atlantic Regional Archives Conference in 2017. Note that these are the scripts used in the workshop itself. For additional scripts and resources referenced in the workshop, navigate to the [_additional resources_](../master//additional%20resources) subfolder, above.
 
 These scripts and this documentation, combined with the workshop itself, are meant to encourage and empower users to run Python scripts at their home institutions. The following details are meant to be understood in order.
 
 
-### How do I use these?
+## How do I use these?
 
 First, a necessary disclaimer: **We highly recommend AGAINST making any changes or using any of these scripts against your working, or Production, instance of ArchivesSpace and/or with the only copy of existing Production data.** If you do not have a Development version of AS, you can contact us or show the vagrant you used in class as an example of how one might be set up for you. Note that GET scripts are not that risky, so if you cannot or will not have a Dev instance of AS, you can still try GETs as your familiarize yourself with our scripts. If fear of making mistakes is holding you back, and rightly so, you should investigate options for running a Dev or Virtual Machine (VM) of AS. If your institution decides to ramp up its use of APIs, a testing environment is a necessity.
 
@@ -126,7 +125,7 @@ There's very little data in the default box, but once you have it up and running
 + more advanced users can use our GET scripts to pull down resource records from their own institutional instance of AS and POST them to the vagrant (remember that the vagrant endpoint will begin with http://localhost:8089)
 
 
-### How do I _run_ these?
+## How do I _run_ these?
 This is a subtly different question from the above. This section gives practical advice for how to run these scripts, though it still raises more questions than answers. The first thing you need to know is what operating system (OS) you are using to execute these scripts.  The Mac (or Linux, for that matter) terminal is a command line interface that allows for nearly full control of the Unix-based Mac (or Linux) operating system; conversely, the Windows command prompt (that thing you get when you type "Run > cmd.exe") is essentially just an extension of the old text-based MS DOS operating system and is more limited in what it can do natively.  To help even the playing field a bit, we recommend using CygWin, an application that allows you to utilize a Unix-like terminal on a Windows machine.
 
 * *All users*
@@ -176,28 +175,28 @@ password='admin'
 Once you download, remember to change this secrets file as needed (i.e. you can't leave it set to the vagrant default and then try to connect to your instance of AS).
 
 
-## [proPublica.py](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/proPublica.py)
+#### [proPublica.py](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/proPublica.py)
 This script creates and saves a separate file called _proPublicaRecord.json_ containing the results of a proPublica search for "animal."
 
 You can run this script by typing `python proPublica.py` in cygwin/the Mac terminal. Remember that you need to be running cygwin/the Mac terminal from the directory where the script is saved, and an output file named _proPublicaRecord.json_ will appear in the same directory.
 
 
-## [postContainerProfiles.py](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/postContainerProfiles.py)
+#### [postContainerProfiles.py](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/postContainerProfiles.py)
 This script sources from [containerProfiles.json](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/containerProfiles.json) to post container profiles into ArchivesSpace. Both files must be downloaded to the same directory for this script to run. You can edit [containerProfiles.json](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/containerProfiles.json) if you'd like to try posting in different profiles.
 
 You can run this script by typing `python postContainerProfiles.py` in cygwin/the Mac terminal. Remember that you need to be running cygwin/the Mac terminal from the directory where the script, the source .json, and [secrets.py](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/secrets.py) are all saved.
 
-## [postBarcodes.py](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/postBarcodes.py)
+#### [postBarcodes.py](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/postBarcodes.py)
 This script sources from [barcodes.csv](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/barcodes.csv) to post barcodes into ArchivesSpace. Both files must be downloaded to the same directory for this script to run. You can edit [barcodes.csv](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/barcodes.csv) if you'd like to try posting in different barcodes.
 
 You can run this script by typing `python postBarcodes.py` in cygwin/the Mac terminal. Remember that you need to be running cygwin/the Mac terminal from the directory where the script, the source .csv, and [secrets.py](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/secrets.py) are all saved.
 
-## [asLinkProfiles.py](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/asLinkProfiles.py)
+#### [asLinkProfiles.py](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/asLinkProfiles.py)
 This script assigns a single container profile to all the containers in a collection. This can be done in the actual AS interface, but serves as a good example of a more complex script. The first few actions of the script would be a good starting point for any API action that requires identifying all the containers associated with a single collection.
 
 You can run this script by typing `python asLinkProfiles.py` in cygwin/the Mac terminal. Remember that you need to be running cygwin/the Mac terminal from the directory where the script and [secrets.py](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/secrets.py) are both saved. This script first prompts the user for a resource number, goes and fetches all the containers associated with that resource, then prompts the user for a container profile number, and then creates the link between each container and that profile. Note that there must already be container profiles in AS for this script to work.
 
-## [viafReconciliationCorporate.py](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/viafReconciliationCorporate.py)
+#### [viafReconciliationCorporate.py](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/viafReconciliationCorporate.py)
 This script looks for a CSV named _organizations.csv_ and then uses VIAF's "corporateNames" index and retrieves VIAF, Library of Congress, and International Standard Name Identifier (ISNI) URIs for each potential match. These results are written to a new file named _viafCorporateResults.csv_. Credit for this script goes to our friend and colleague [Eric Hanson](https://github.com/ehanson8 "Eric's GitHub").
 
 The format of the  _organizations.csv_ should look like this:
@@ -212,14 +211,14 @@ The format of the  _organizations.csv_ should look like this:
 You can run this script by typing `python viafReconciliationPeople.py` in cygwin/the Mac terminal. Remember that you need to be running cygwin/the Mac terminal from the directory where the script and your _organizations.csv_ is saved. An output file named _viafCorporateResults.csv_ will appear in the same directory, which you can post to ASpace using [postVIAFOrganizations.py](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/postVIAFOrganizations.py).
 
 
-## [postVIAFOrganizations.py](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/postVIAFOrganizations.py)
+#### [postVIAFOrganizations.py](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/postVIAFOrganizations.py)
 This script looks for the CSV called _viafCorporateResults.csv_ created by running [viafReconciliationCorporate.py](https://github.com/jhu-archives-and-manuscripts/MARAC_API_Workshop/blob/master/viafReconciliationCorporate.py), converts those reults to JSON on the fly, and then posts the resulting corporate agent records to ArchivesSpace as new records (note: this script does not edit _pre-existing_ agent records, though that is possible with a script that first GETs the agents you have, runs them through the VIAF reconciliation, and then posts them back [saying all that isn't helpful if you don't have a script that does so, but that's how you start to game out what you need]).
 
 You can run this script by typing `python postVIAFOrganizations.py` in cygwin/the Mac terminal. Remember that you need to be running cygwin/the Mac terminal from the directory where the script and your _viafCorporateResults.csv_ is saved.
 
 
 
-## python-scripts
+# python-scripts
 
 #### [asCSV-aos.py](https://github.com/jhu-archives-and-manuscripts/python_scripts/blob/master/asCSV-aos.py)
 Generate a CSV of all AOs from a particular resource using agentarchives.
@@ -241,3 +240,33 @@ Post contents of a jsonfile.
 
 #### [suppressSelectEnumerations.py](https://github.com/jhu-archives-and-manuscripts/python_scripts/blob/master/suppressSelectEnumerations.py)
 Suppress enumeration values as identified in an external json file.
+
+
+# archivesspace-skill-share
+Scripts used at Beyond the Basics ArchivesSpace Skill Share on Oct. 17
+
+## Sample Files
+#### [thecaptains.json](https://github.com/jhu-archives-and-manuscripts/archivesspace-skill-share/blob/master/thecaptains.json)
+A sample file of JSON data that can be used with the [postAgents.py](https://github.com/jhu-archives-and-manuscripts/archivesspace-skill-share/blob/master/postAgents.py) script to create ArchiveSpace Agent records via the ArchivesSpace API.
+
+## Sample Scripts
+#### [postAgents.py](https://github.com/jhu-archives-and-manuscripts/archivesspace-skill-share/blob/master/postAgents.py)
+This script differs from the [postArchivalObjects.py](https://github.com/jhu-archives-and-manuscripts/archivesspace-skill-share/blob/master/postArchivalObjects.py) script because it posts new records to ArchivesSpace rather than overwriting existing records based on their "uri."  This script requires a JSON file of agent data to be placed in the same directory as the script you will be running, in this case, the agent data is contained in "[thecaptains.json](https://github.com/jhu-archives-and-manuscripts/archivesspace-skill-share/blob/master/thecaptains.json)."  This JSON file contains the minimum number of properties that are required to create an agent record through the API.  If you try POST to a JSON file that does that conform to ArchivesSpace's requirements, the API will provide an error message that details what required properties are missing.
+
+#### [getArchivalObjects.py](https://github.com/jhu-archives-and-manuscripts/archivesspace-skill-share/blob/master/getArchivalObjects.py)
+You can try this easy script (which makes no changes to any data). This script will authenticate with the API and then download all of ArchiveSpace's archival objects to a JSON file called "archival_objects.json." 
+
+Note: The "page_size" is set to 3000, but ArchivesSpace's configuration defaults to 250 .
+To set this within the demo, go to Files (looks like a file drawer) > archivesspace > config and look for the lines that say 
+
+\#AppConfig[:default_page_size] = 10
+
+\#AppConfig[:max_page_size] = 250
+
+(Note that a # in this case comments these lines out, so you must remove the # to enable this configuration). 
+
+#### [postArchivalObjects.py](https://github.com/jhu-archives-and-manuscripts/archivesspace-skill-share/blob/master/postArchivalObjects.py)
+After downloading the archival objects to a JSON file "archival_objects.json" with the [getArchivalObjects.py](https://github.com/jhu-archives-and-manuscripts/archivesspace-skill-share/blob/master/getArchivalObjects.py) script, users can edit the JSON file and post the changes back into ArchivesSpace using this [postArchivalObjects.py](https://github.com/jhu-archives-and-manuscripts/archivesspace-skill-share/blob/master/postArchivalObjects.py) script. The "archival_objects.json" file needs to be in the same directory as [postArchivalObjects.py](https://github.com/jhu-archives-and-manuscripts/archivesspace-skill-share/blob/master/postArchivalObjects.py) for the script to work. The script matches each archival object based on the "uri" property and overwrites the current ArchivesSpace archival object record with the archival object record contained in the "archival_objects.json."  The "lock_version" will also need to match between the two archival objects records or the record will not be overwritten. The lock version changes every time you modify the record to prevent users from overwriting new data with old data. This built-in failsafe is a good one, but it is something to remember and plan for.
+
+
+
